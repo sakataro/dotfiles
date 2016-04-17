@@ -1,0 +1,9 @@
+neobundle.vim
+neocomplete.vim
+neosnippet
+neosnippet-snippets
+unite.vim
+vim-quickrun
+vim-smartinput
+vimfiler
+vimproc
