@@ -132,8 +132,26 @@ NeoBundle 'Shougo/neocomplete.vim'
     let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
      
 NeoBundle 'kana/vim-smartinput'
-NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet.vim'
+" Plugin key-mappligs.
+imap <C-k>  <Plug>(neosnippet_expand_or_jump)
+smap <C-k>  <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>  <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+            \"\<Plug>(neosnippet_expand_or_jump)"
+            \: pumvisible() ? "\<C-n>" : "<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+            \"\<Plug>(neosnippet_expand_or_jump)"
+            \: "<TAB>"
+" For snippet_complete marker.
+if has('conceal')
+    set conceallevel=2 concealcursor=i
+endif
+
 NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle "honza/vim-snippets"
 
 NeoBundleCheck
 call neobundle#end()
