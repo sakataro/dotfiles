@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/taro/.local'
-let g:netrw_dirhist_2='/Applications/MAMP/htdocs/pembit/fuel/app/views/article'
-let g:netrw_dirhist_3='/Users/taro/.vim'
-let g:netrw_dirhist_4='/Applications/MAMP/htdocs/pembit/fuel/app/views/top'
-let g:netrw_dirhist_5='/Users/taro/Downloads/map'
-let g:netrw_dirhist_6='/Users/taro/.vim/bundle/neosnippet-snippets'
-let g:netrw_dirhist_7='/Users/taro/dotfiles/vimfiles/vimfiles'
