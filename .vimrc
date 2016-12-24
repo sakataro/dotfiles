@@ -13,6 +13,9 @@ highlight Normal ctermbg=black ctermfg=grey
 highlight StatusLine term=none cterm=none ctermfg=black ctermbg=grey
 highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgrey
 
+"set my custom key bind
+inoremap <silent> jj <ESC>
+
 if has('vim_starting')
     set nocompatible
     if !isdirectory(expand("~/.vim/bundle/neobundle.vim/"))
