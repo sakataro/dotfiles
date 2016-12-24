@@ -157,11 +157,17 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle "honza/vim-snippets"
 NeoBundle 'mattn/emmet-vim'
 let g:user_emmet_leader_key='<c-t>'
+"
+"color scheme
+NeoBundle 'tomasr/molokai'
 NeoBundleCheck
+
 call neobundle#end()
+
+
 filetype plugin indent on
 call smartinput#map_to_trigger('i','<Plug>(smartinput_BS)', '<BS>', '<BS>')
 call smartinput#map_to_trigger('i','<Plug>(smartinput_C-h)','<BS>','<C-h>')
 call smartinput#map_to_trigger('i','<Plug>(smartinput_CR)','<Enter>','<Enter>')
 
-
+colorscheme molokai
