@@ -157,7 +157,12 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle "honza/vim-snippets"
 NeoBundle 'mattn/emmet-vim'
 let g:user_emmet_leader_key='<c-t>'
-"
+
+NeoBundle 'bronson/vim-trailing-whitespace'
+
+NeoBundle 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup = 1
+
 "color scheme
 NeoBundle 'tomasr/molokai'
 NeoBundleCheck
