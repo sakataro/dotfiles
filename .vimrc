@@ -15,6 +15,7 @@ highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgrey
 
 "set my custom key bind
 inoremap <silent> jj <ESC>
+inoremap <silent> っｊ <ESC>
 
 if has('vim_starting')
     set nocompatible
