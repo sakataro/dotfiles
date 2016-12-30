@@ -32,6 +32,8 @@ NeoBundleFetch 'Shungo/neobundle.vim'
 
 NeoBundle 'Shougo/unite.vim'
 
+NeoBundle 'scrooloose/nerdtree'
+
 NeoBundle 'Shougo/vimfiler'
 
 NeoBundle 'Shougo/vimproc',{
