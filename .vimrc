@@ -3,7 +3,7 @@ set number
 set ruler
 set cursorline
 set cursorcolumn
-set cindent 
+set cindent
 set expandtab
 set sw=4
 set ts=4
@@ -16,6 +16,17 @@ highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgrey
 "set my custom key bind
 inoremap <silent> jj <ESC>
 inoremap <silent> っｊ <ESC>
+
+
+augroup BinaryXXD
+    autocmd!
+    autocmd BufReadPre  *.bin let &binary =1
+    autocmd BufReadPost * if &binary | silent %!xxd -g 1
+    autocmd BufReadPost * set ft=xxd | endif
+    autocmd BufWritePre * if &binary | execute "%!xxd -r" | endif
+    autocmd BufWritePost * if &binary | silent %!xxd -g 1
+    autocmd BufWritePost * set nomod | endif
+augroup END
 
 if has('vim_starting')
     set nocompatible
@@ -166,9 +177,15 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
 
+"vim-go
+NeoBundle 'fatih/vim-go'
+
 "color scheme
 NeoBundle 'tomasr/molokai'
 NeoBundleCheck
+
+"sql
+NeoBundle 'vim-scripts/dbext.vim'
 
 call neobundle#end()
 
