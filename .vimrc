@@ -14,8 +14,11 @@ highlight StatusLine term=none cterm=none ctermfg=black ctermbg=grey
 highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgrey
 
 "set my custom key bind
+let mapleader="\<Space>"
 inoremap <silent> jj <ESC>
 inoremap <silent> っｊ <ESC>
+map <leader>j <C-f>
+map <leader>k <C-b>
 
 
 augroup BinaryXXD
@@ -26,6 +29,11 @@ augroup BinaryXXD
     autocmd BufWritePre * if &binary | execute "%!xxd -r" | endif
     autocmd BufWritePost * if &binary | silent %!xxd -g 1
     autocmd BufWritePost * set nomod | endif
+augroup END
+
+augroup FiletypeGroup
+    autocmd!
+    au BufNewFile,BufRead *.vue set filetype=vue.html.javascript.css
 augroup END
 
 if has('vim_starting')
@@ -182,10 +190,35 @@ NeoBundle 'fatih/vim-go'
 
 "color scheme
 NeoBundle 'tomasr/molokai'
-NeoBundleCheck
 
 "sql
 NeoBundle 'vim-scripts/dbext.vim'
+
+"php formatter
+NeoBundle 'beanworks/vim-phpfmt'
+let g:phpformat_standard = 'PSR2'
+let g:phpformat_autosave = 1
+
+"vue syntax
+NeoBundle 'posva/vim-vue'
+
+"Asynchronous Lint Engine
+NeoBundle 'w0rp/ale'
+let g:ale_linters = {
+      \ 'php':['php'],
+      \ 'html': [],
+      \ 'css': ['stylelint'],
+      \ 'javascript': ['eslint'],
+      \ 'vue': ['eslint']
+      \ }
+let g:ale_linter_aliases = {'vue': 'css'}
+let g:ale_fixers = {
+      \ 'javascript': ['eslint']
+      \ }
+let g:ale_fix_on_save = 1
+
+NeoBundleCheck
+
 
 call neobundle#end()
 
