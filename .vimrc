@@ -8,10 +8,14 @@ set expandtab
 set sw=4
 set ts=4
 set sts=0
+set clipboard+=unnamed
 syntax on
 highlight Normal ctermbg=black ctermfg=grey
 highlight StatusLine term=none cterm=none ctermfg=black ctermbg=grey
 highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgrey
+
+"set dictionary files
+autocmd FileType php,ctp :set dictionary=~/.vim/dict/php.dict
 
 "set my custom key bind
 let mapleader="\<Space>"
@@ -155,7 +159,7 @@ NeoBundle 'Shougo/neocomplete.vim'
     " For perlomni.vim setting.
     " https://github.com/c9s/perlomni.vim
     let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-     
+
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'Shougo/neosnippet.vim'
 " Plugin key-mappligs.
@@ -193,6 +197,7 @@ NeoBundle 'tomasr/molokai'
 
 "sql
 NeoBundle 'vim-scripts/dbext.vim'
+
 
 "php formatter
 NeoBundle 'beanworks/vim-phpfmt'
