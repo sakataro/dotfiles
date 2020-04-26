@@ -17,11 +17,13 @@ augroup FiletypeGroup
     autocmd!
     au BufNewFile,BufRead *.vue set filetype=vue.html.javascript.css
     au BufNewFile,BufRead *.yml set filetype=yaml
+    au BufNewFile,BufRead *.js set filetype=javascript
 augroup END
 
 "set dictionary files
 autocmd FileType php,ctp :set dictionary=~/.vim/dict/php.dict
 autocmd FileType yaml setlocal ts=2 sw=2
+autocmd FileType javascript setlocal ts=2 sw=2
 
 au FileType plantuml command! OpenUml :!open -a /Applications/Google\ Chrome.app %
 
