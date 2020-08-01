@@ -10,9 +10,6 @@ set clipboard+=unnamed
 set hlsearch
 syntax on
 
-"set path
-let $PATH = "~/.pyenv/shims:".$PATH
-
 augroup FiletypeGroup
     autocmd!
     au BufNewFile,BufRead *.vue set filetype=vue.html.javascript.css
@@ -116,8 +113,6 @@ let g:ale_lint_on_text_changed = 0
 Plug 'aklt/plantuml-syntax'
 
 Plug 'jparise/vim-graphql'
-
-Plug 'lambdalisue/vim-pyenv'
 
 Plug 'hashivim/vim-terraform'
 
