@@ -16,12 +16,14 @@ augroup FiletypeGroup
     au BufNewFile,BufRead *.yml set filetype=yaml
     au BufNewFile,BufRead *.js set filetype=javascript
     au BufNewFile,BufRead *.blade.php set filetype=html
+    au BufRead,BufNewFile *.ts set filetype=typescript
 augroup END
 
 "set dictionary files
 autocmd FileType php,ctp :set dictionary=~/.vim/dict/php.dict
 autocmd FileType yaml setlocal ts=2 sw=2
 autocmd FileType javascript setlocal ts=2 sw=2
+autocmd FileType typescript setlocal ts=2 sw=2
 autocmd FileType html setlocal ts=2 sw=2
 autocmd FileType json setlocal ts=2 sw=2
 
@@ -100,9 +102,6 @@ let g:ale_linters = {
       \ 'yaml': ['yamllint']
       \ }
 let g:ale_linter_aliases = {'vue': 'css'}
-let g:ale_fixers = {
-      \ 'javascript': ['eslint']
-      \ }
 let g:ale_phpcs_executable = '/usr/local/bin/phpcs'
 let g:ale_php_phpcs_standard = 'PSR2'
 let g:ale_php_phpcs_use_global = 1
@@ -121,6 +120,13 @@ let g:terraform_fmt_on_save = 1
 
 "保存時に自動でフォーマット
 autocmd BufWritePre <buffer> LspDocumentFormatSync
+
+Plug 'leafgarland/typescript-vim'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
+Plug 'elmcast/elm-vim'
 
 call plug#end()
 
