@@ -128,6 +128,8 @@ Plug 'prettier/vim-prettier', {
 
 Plug 'elmcast/elm-vim'
 
+Plug 'elixir-editors/vim-elixir'
+
 call plug#end()
 
 colorscheme molokai
